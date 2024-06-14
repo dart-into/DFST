@@ -33,12 +33,22 @@ screen_salient_data.py
 
 You will get new datasets, and these datasets are inputs of the model.
 
+
+####  Q1  When deal with single typle task (open the file "single_task")
+```
+run.py
+```
+Then a quality model will be trained.
+
+####  Q21  When deal with multi-typle task (open the file "meta_multi_tasks")
 ### Meta training on IQA databases
 First you need to modify config paramters to make sure the database path is correct.
 Meta training  our model on IQA Dataset.
 ```
-MMQA_newload.py
+MetaIQA_newload.py
 ```
+Then a quality model will be trained.(TID2013_KADID10K_4_1.pt)
+
 Some available options:
 * `--dataset`: Meta training  dataset, support datasets: TID2013 |KADID10K| LIVE | CSIQ | .
 * `--lr`: Learning rate.
@@ -49,9 +59,9 @@ Some available options:
 ```
 If you want to repartition the dataset, you'll need to make a new mat file instead.
 
-### Fine-tuning for different datasets
+### Fine-tuning for different datasets(Here is an example for CSIQ.)
 ```
-FineTune_newload.py
+Finetune_csiq_4_1.py
 ```
 Some available options:
 * `--dataset_dir`:  Fine-tuning dataset image path.
