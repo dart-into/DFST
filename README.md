@@ -1,7 +1,7 @@
 # DFST
 a blind image quality assessment method
 Code for DFST
-![./Net](https://github.com/dart-into/MMQA/blob/main/framework.png)
+![./Net](network.png)
 
 ## Dataset
 | Dataset   | Links                                                       |
