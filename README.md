@@ -19,7 +19,7 @@ Code for DFST
 
 ### Effectiveness of the network
 |    |       |        |    | SPAQ     |    SPAQ |    CSIQ |  CSIQ  |
-|  --- |    ---     |    ---    |  --- | ---     |    ---- |    --- |  -----  |
+| :---: |    :---:     |    :---:    |  :---: | :---:     |    :----: |    :---: |  :-----:  |
 |   #   |        Salient   |   Non-salient        |   SAM  |    PLCC  |    SRCC |  PLCC   |  SRCC  |
 |   1   |                  |                      |   √    |   0.795  |   0.784 |  0.822  | 0.831  |
 |   2   |   √              |                      |   √    |   0.857  |   0.847 |  0.874  | 0.867  |
@@ -29,7 +29,7 @@ Code for DFST
 
 ### Effectiveness of DFS
 |    |       |        |    | SPAQ     |    SPAQ |    CSIQ |  CSIQ  |
-|  --- |    ---     |    ---    |  --- | ---     |    ---- |    --- |  -----  |
+|  :---: |    :---:     |    :---:    | :---: | :---:     |    :----: |    :---: |  :-----:  |
 |   #   |     RRB          |   RSC                |   RC   |    PLCC  |    SRCC |  PLCC   |  SRCC  |
 |   1   |                  |                      |        |   0.831  |   0.830 |  0.852  | 0.857  |
 |   2   |   √              |                      |        |   0.877  |   0.864 |  0.901  | 0.884  |
@@ -42,7 +42,7 @@ Code for DFST
 
 ### Cross-dataset testing contains various distortions
 |   Meta-learning  |   TID2013   KADID    |  KADID  |  TID2013 | 
-|    ---    |    ---     |    ---    |  ---    |
+|    :---:    |    :---:     |    :---:    |  :---:    |
 |   Fine-tuning  |   LIVEC    |  LIVEC  |  LIVEC |
 |   HyperIQA     |   0.856    |  0.861  |  0.852 |
 |   MUSIQ        |   0.884    |  0.834  |  0.871 |
@@ -58,7 +58,7 @@ Code for DFST
 
 ### Cross-dataset testing contains various content types
 |   Meta-learning  |   TID2013   KADID    |  KADID  |  TID2013 | 
-|    ---    |    ---     |    ---    |  ---    |
+|    :---:    |    :---:     |    :---:    |  :---:    |
 |   Fine-tuning  |   AGIQA-3k | AGIQA-3k|AGIQA-3k|
 |   HyperIQA     |   0.828    |  0.822  |  0.819 |
 |   MUSIQ        |   0.812    |  0.785  |  0.792 |
@@ -72,7 +72,14 @@ Code for DFST
 |   CICI         |   0.760    |  0.728  |  0.700  |
 |   Ours         |   0.825    |  0.813  |  0.822  |
 
-
+## Screening rate on LIVE-C, LIVE, CSIQ, and SPAQ. We calculated the rate of images with different 0.2 error, while using DFS.
+|   Error  |   LIVE-C |  LIVE  |  CSIQ |  SPAQ  | 
+|   :---:  |   :---:  |  :---: | :---: |  :---: |
+|   0.0< <0.1   |   9.8%    |  2.1% | 1.7%  |  5.2%  |
+|   0.1< <0.2   |   73.9%   |  84.1% | 87.3%  |  78.8%  |
+|   0.2< <0.3   |   6.2%    |  10.5% | 5.4%  |  2.3%  |
+|   0.3< <0.5   |   7.8%    |  2.1% | 4.2%  |  8.6%  |
+|   0.5< <1.0   |   2.3%    |  1.2% | 1.4%  |  5.1%  |
 
 
 ## Requirements
