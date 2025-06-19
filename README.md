@@ -3,6 +3,13 @@ a blind image quality assessment method
 Code for DFST
 ![./Net](network.png)
 
+
+## Feature visualizations: the difference between heatmaps before/after screening is illustrated.
+![./Net](feature.png)
+
+
+
+
 ## Dataset
 | Dataset   | Links                                                       |
 | --------- | ----------------------------------------------------------- |
