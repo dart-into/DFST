@@ -14,6 +14,67 @@ Code for DFST
 | SPAQ      | https://github.com/h4nwei/SPAQ |
 | KonIQ      | http://database.mmsp-kn.de/koniq-10k-database.html |
 | AGIQA     |  https://github.com/lcysyzxdxc/AGIQA-3k-Database |
+
+## Ablation study on SPAQ and CSIQ 
+
+### Effectiveness of the network
+|    |       |        |    | SPAQ     |    SPAQ |    CSIQ |  CSIQ  |
+|  --- |    ---     |    ---    |  --- | ---     |    ---- |    --- |  -----  |
+|   #   |        Salient   |   Non-salient        |   SAM  |    PLCC  |    SRCC |  PLCC   |  SRCC  |
+|   1   |                  |                      |   √    |   0.795  |   0.784 |  0.822  | 0.831  |
+|   2   |   √              |                      |   √    |   0.857  |   0.847 |  0.874  | 0.867  |
+|   3   |                  |     √                |   √    |   0.816  |   0.828 |  0.843  | 0.833  |
+|   4   |   √              |     √                |        |   0.879  |   0.853 | 0.892   | 0.876  |
+|   5   |   √              |     √                |   √    |   0.929  |   0.921 | 0.966   | 0.963  |
+
+### Effectiveness of DFS
+|    |       |        |    | SPAQ     |    SPAQ |    CSIQ |  CSIQ  |
+|  --- |    ---     |    ---    |  --- | ---     |    ---- |    --- |  -----  |
+|   #   |     RRB          |   RSC                |   RC   |    PLCC  |    SRCC |  PLCC   |  SRCC  |
+|   1   |                  |                      |        |   0.831  |   0.830 |  0.852  | 0.857  |
+|   2   |   √              |                      |        |   0.877  |   0.864 |  0.901  | 0.884  |
+|   3   |                  |     √                |        |   0.904  |   0.899 |  0.917  | 0.0.4  |
+|   4   |   √              |     √                |        |   0.910  |   0.906 | 0.925   | 0.930  |
+|   5   |   √              |     √                |   √    |   0.929  |   0.921 | 0.966   | 0.963  |
+
+
+## Comparison between other SOTA methods in SRCC on cross-datasets
+
+### Cross-dataset testing contains various distortions
+|   Meta-learning  |   TID2013   KADID    |  KADID  |  TID2013 | 
+|    ---    |    ---     |    ---    |  ---    |
+|   Fine-tuning  |   LIVEC    |  LIVEC  |  LIVEC |
+|   HyperIQA     |   0.856    |  0.861  |  0.852 |
+|   MUSIQ        |   0.884    |  0.834  |  0.871 |
+|   DEIQT        |   0.874    |  0.882  |  0.862 |
+|   CICI         |   0.844    |  0.846  |  0.857 |
+|   Ours         |   0.911    |  0.894  |  0.873 |
+|   Fine-tuning  |   CSIQ     |  CSIQ   |  CSIQ  |
+|   HyperIQA     |   0.876    |  0.859  |  0.860 |
+|   MUSIQ        |   0.867    |  0.870  |  0.886 |
+|   DEIQT        |   0.914    |  0.920  |  0.876 |
+|   CICI         |   0.910    |  0.927  |  0.901 |
+|   Ours         |   0.950    |  0.956  |  0.931 |
+
+### Cross-dataset testing contains various content types
+|   Meta-learning  |   TID2013   KADID    |  KADID  |  TID2013 | 
+|    ---    |    ---     |    ---    |  ---    |
+|   Fine-tuning  |   AGIQA-3k | AGIQA-3k|AGIQA-3k|
+|   HyperIQA     |   0.828    |  0.822  |  0.819 |
+|   MUSIQ        |   0.812    |  0.785  |  0.792 |
+|   DEIQT        |   0.842    |  0.807  |  0.821 |
+|   CICI         |   0.831    |  0.809  |  0.804 |
+|   Ours         |   0.872    |  0.856  |  0.846 |
+|   Fine-tuning  |  AGIQA-20k |AGIQA-20k|AGIQA-20k|
+|   HyperIQA     |   0.755    |  0.804  |  0.739  |
+|   MUSIQ        |   0.794    |  0.752  |  0.766  |
+|   DEIQT        |   0.802    |  0.794  |  0.763  |
+|   CICI         |   0.760    |  0.728  |  0.700  |
+|   Ours         |   0.825    |  0.813  |  0.822  |
+
+
+
+
 ## Requirements
 - PyTorch=1.7.0
 - Torchvision=0.8.1
